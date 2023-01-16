@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/kikytokamuro/grpc_py_go_example/dir_watcher";
+
+package dir_watcher;
+
+service DirWatcher {
+  rpc Do(DirWatchRequest) returns (DirWatchResponse) {}
+}
+
+message DirWatchRequest {
+  string directory = 1;
+}
+
+message DirWatchResponse {
+  repeated string content = 1;
+}
